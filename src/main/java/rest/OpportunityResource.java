@@ -75,12 +75,10 @@ public class OpportunityResource {
     public String getOpportunity(@PathParam("id") int id) throws NotFoundException {
         OpportunityDTO o = OPPORTUNITYFACADE.getOpportunity((int) id);
         return GSON.toJson(o);
-    }
+    }   
     
-    //Virker ikke - højst sandsynligt grundet at al information skal igennem kun en entitet.
-    //Her kunne man have lavet en clientDTO og taget alle informationer fra alle andre dtoer og sat i clientDTOen
-    //Det ville måske have løst problemet.
-//    @POST 
+    
+//    @POST //Virker ikke 
 //    @Produces({MediaType.APPLICATION_JSON})
 //    @Consumes({MediaType.APPLICATION_JSON})
 //    public String createClient(String nameO, String amount, String closeDate, String nameC, String email, String company,

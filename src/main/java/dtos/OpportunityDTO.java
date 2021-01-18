@@ -20,6 +20,7 @@ public class OpportunityDTO {
     }
 
     public OpportunityDTO(Opportunity opp) {
+        this.id = opp.getId();
         this.name = opp.getName();
         this.amount = opp.getAmount();
         this.closeDate = opp.getCloseDate();

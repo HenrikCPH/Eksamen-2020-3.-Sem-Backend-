@@ -27,8 +27,8 @@ public class ContactDTO {
         this.name = contact.getName();
         this.email = contact.getEmail();
         this.company = contact.getCompany();
-        this.jobtitle = contact.getName();
-        this.phone = contact.getName();
+        this.jobtitle = contact.getJobtitle();
+        this.phone = contact.getPhone();
     }
 
     public String getName() {

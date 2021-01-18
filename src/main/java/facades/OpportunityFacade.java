@@ -94,38 +94,39 @@ public class OpportunityFacade {
             em.close();
         }
     }
-
-    public OpportunityDTO addClient(String nameO, String amount, String closeDate, String nameC, String email, String company,
-            String jobtitle, String phone, String nameOS, String title, String comment, String dueDate, String nameTT, String nameST) throws NotFoundException {
-        EntityManager em = getEntityManager();
-
-        Opportunity op1 = new Opportunity(nameO, amount, closeDate);
-        Contact c1 = new Contact(nameC, email, company, jobtitle, phone);
-        OpportunityStatus oS1 = new OpportunityStatus(nameOS);
-        Task t1 = new Task(title, comment, dueDate);
-        TaskType tt1 = new TaskType(nameTT);
-        TaskStatus ts1 = new TaskStatus(nameST);
-
-        t1.addTaskStatus(ts1);
-        t1.addTaskType(tt1);
-        op1.addContact(c1);
-        op1.addTask(t1);
-        op1.addOpportunityStatus(oS1);
-        t1.setOpportunity(op1);
-        oS1.setOpportunity(op1);
-        tt1.setTask(t1);
-        c1.setOpportunity(op1);
-        ts1.setTask(t1);
-
-        try {
-            em.getTransaction().begin();
-            em.persist(op1);
-            em.getTransaction().commit();
-        } finally {
-            em.close();
-        }
-        return new OpportunityDTO(op1);
-    }
+    
+        // virker ikke ---------
+//    public OpportunityDTO addClient(String nameO, String amount, String closeDate, String nameC, String email, String company,
+//            String jobtitle, String phone, String nameOS, String title, String comment, String dueDate, String nameTT, String nameST) throws NotFoundException {
+//        EntityManager em = getEntityManager();
+//
+//        Opportunity op1 = new Opportunity(nameO, amount, closeDate);
+//        Contact c1 = new Contact(nameC, email, company, jobtitle, phone);
+//        OpportunityStatus oS1 = new OpportunityStatus(nameOS);
+//        Task t1 = new Task(title, comment, dueDate);
+//        TaskType tt1 = new TaskType(nameTT);
+//        TaskStatus ts1 = new TaskStatus(nameST);
+//
+//        t1.addTaskStatus(ts1);
+//        t1.addTaskType(tt1);
+//        op1.addContact(c1);
+//        op1.addTask(t1);
+//        op1.addOpportunityStatus(oS1);
+//        t1.setOpportunity(op1);
+//        oS1.setOpportunity(op1);
+//        tt1.setTask(t1);
+//        c1.setOpportunity(op1);
+//        ts1.setTask(t1);
+//
+//        try {
+//            em.getTransaction().begin();
+//            em.persist(op1);
+//            em.getTransaction().commit();
+//        } finally {
+//            em.close();
+//        }
+//        return new OpportunityDTO(op1);
+//    }
 
     public OpportunityDTO editOpportunity(OpportunityDTO o) throws NotFoundException {
         EntityManager em = getEntityManager();
@@ -242,11 +243,11 @@ public class OpportunityFacade {
 //        EntityManagerFactory emf = EMF_Creator.createEntityManagerFactory();
 //        EntityManager em = emf.createEntityManager();
 //        
-//        Opportunity o1 = new Opportunity("Hula Bula", "500000", "On going");
-//        Task t1 = new Task("Call", "We want all the happiness in the world", "20-01-2022");
-//        Contact c1 = new Contact("King Kong", "Happy@KomGlad.com", "Happiness 2020", "Have fun", "12345678");
-//        OpportunityStatus oS1 = new OpportunityStatus("Active"); // won - lost - active
-//        TaskType tt1 = new TaskType("Call");
+//        Opportunity o1 = new Opportunity("Big Buck", "250000", "Work in progess");
+//        Task t1 = new Task("Call", "We want all the money in the world", "22-01-2022");
+//        Contact c1 = new Contact("Stein Bagger", "IT@Factory.com", "IT Factory", "Make Money", "87654321");
+//        OpportunityStatus oS1 = new OpportunityStatus("To busy"); // won - lost - active
+//        TaskType tt1 = new TaskType("Call!!!!!!!");
 //        TaskStatus ts1 = new TaskStatus("Non started");
 //        
 //        t1.addTaskStatus(ts1);
