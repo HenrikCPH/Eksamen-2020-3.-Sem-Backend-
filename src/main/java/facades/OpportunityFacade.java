@@ -243,11 +243,11 @@ public class OpportunityFacade {
 //        EntityManager em = emf.createEntityManager();
 //        
 //        Opportunity o1 = new Opportunity("Hula Bula", "500000", "On going");
-//        Task t1 = new Task("By Happy", "We want all the happiness in the world", "20-01-2022");
+//        Task t1 = new Task("Call", "We want all the happiness in the world", "20-01-2022");
 //        Contact c1 = new Contact("King Kong", "Happy@KomGlad.com", "Happiness 2020", "Have fun", "12345678");
-//        OpportunityStatus oS1 = new OpportunityStatus("On going");
-//        TaskType tt1 = new TaskType("Fun");
-//        TaskStatus ts1 = new TaskStatus("On going");
+//        OpportunityStatus oS1 = new OpportunityStatus("Active"); // won - lost - active
+//        TaskType tt1 = new TaskType("Call");
+//        TaskStatus ts1 = new TaskStatus("Non started");
 //        
 //        t1.addTaskStatus(ts1);
 //        t1.addTaskType(tt1);
